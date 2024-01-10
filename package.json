@@ -2,6 +2,9 @@
   "name": "fix-brackets",
   "displayName": "Fix Brackets: Edit and Complete",
   "description": "Effectively edit, move, complete brackets with keyboard",
+  "publisher": "lyonbot",
+  "preview": true,
+  "homepage": "https://github.com/lyonbot/fix-brackets",
   "keywords": [
     "brackets",
     "parenthesis",
@@ -18,6 +21,10 @@
     "Keymaps",
     "Other"
   ],
+  "bugs": {
+    "url": "https://github.com/lyonbot/fix-brackets/issues",
+    "email": "lyonbot@outlook.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/lyonbot/fix-brackets"
@@ -76,7 +83,7 @@
           },
           "fix-brackets.pauseMiddleChars": {
             "type": "string",
-            "default": ",=+-*/",
+            "default": ",=+-*/!?",
             "description": "The characters that ) stop at its left, ( stop at its right"
           },
           "fix-brackets.pauseAfterChars": {
@@ -189,8 +196,10 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
-    "compile": "tsc -p ./ && webpack --mode production",
+    "package": "pnpm vsce package --no-dependencies --skip-license",
+    "vscode:prepublish": "pnpm run bundle",
+    "compile": "tsc -p ./",
+    "bundle": "rm -rf out && webpack --mode production",
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
@@ -199,7 +208,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "@types/vscode": "^1.85.0",
+    "@types/vscode": "^1.60.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "@vscode/test-cli": "^0.0.4",

@@ -1,20 +1,22 @@
-# fix-brackets
+# Fix Brackets
 
-<p align="center">
-  <img src="./images/icon.png" style="width: 96px; height:96px">
-</p>
+<div align="center">
 
-<p align="center">
+<img src="./images/icon.png" width="96" height="96">
+
 ⚔️ The VS Code extension that helps you fight against brackets!
-</p>
+
+[💾 Install on VSCode](https://marketplace.visualstudio.com/items?itemName=lyonbot.fix-brackets) - [💬 Feedback](https://github.com/lyonbot/fix-brackets/issues)
+
+</div>
 
 ## Features
 
-- **💫 Magical Closing Brackets 💫**
+- **💫 Magical Brackets 💫**
 
-  - auto enter that mode when typing `]` `)` `}` - can be disabled in settings
-  - move them with `Cmd+Arrow`
-  - _bonus:_ use `Cmd+G` to toggle that mode on any closing bracket
+  - typing `]` `)` `}` and auto activate this mode - can be disabled in settings
+  - **move** them with `Cmd+↓` `Cmd+↑` or `Cmd+←` `Cmd+→`
+  - _tips:_ use `Cmd+G` to switch any open / closing bracket into magical mode
 
   ![](./images/magical-bracket.gif)
 
