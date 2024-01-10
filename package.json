@@ -1,0 +1,218 @@
+{
+  "name": "fix-brackets",
+  "displayName": "Fix Brackets: Edit and Complete",
+  "description": "Effectively edit, move, complete brackets with keyboard",
+  "keywords": [
+    "brackets",
+    "parenthesis",
+    "surrounding",
+    "refactoring",
+    "completion"
+  ],
+  "version": "0.1.0",
+  "icon": "./images/icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Keymaps",
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lyonbot/fix-brackets"
+  },
+  "files": [
+    "./out/extension.js",
+    "./images/icon.png"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection && editorTextFocus && fixBrackets.hasMagicalBrackets",
+          "command": "fix-brackets.completeBracket",
+          "group": "1_modification"
+        },
+        {
+          "when": "editorTextFocus && fixBrackets.canToggleMagicalBracketMode",
+          "command": "fix-brackets.toggleMagicalBracketMode",
+          "group": "1_modification"
+        },
+        {
+          "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+          "command": "fix-brackets.move-down",
+          "group": "1_modification"
+        },
+        {
+          "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+          "command": "fix-brackets.move-up",
+          "group": "1_modification"
+        },
+        {
+          "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+          "command": "fix-brackets.move-left",
+          "group": "1_modification"
+        },
+        {
+          "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+          "command": "fix-brackets.move-right",
+          "group": "1_modification"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "Fix Brackets",
+        "properties": {
+          "fix-brackets.pauseBeforeChars": {
+            "type": "string",
+            "default": "<",
+            "description": "When moving a magical bracket, we might pause before these characters"
+          },
+          "fix-brackets.pauseMiddleChars": {
+            "type": "string",
+            "default": ",=+-*/",
+            "description": "The characters that ) stop at its left, ( stop at its right"
+          },
+          "fix-brackets.pauseAfterChars": {
+            "type": "string",
+            "default": ">"
+          },
+          "fix-brackets.boundaryChars": {
+            "type": "string",
+            "default": ";",
+            "description": "When moving a magical bracket, it can't go across these characters"
+          },
+          "fix-brackets.autoMagicalBracketMode": {
+            "type": "string",
+            "enum": [
+              "typing",
+              "never"
+            ],
+            "enumItemLabels": [
+              "When typing a closing bracket ) ] }",
+              "Never"
+            ],
+            "default": "typing"
+          },
+          "fix-brackets.outlineStyleOfMagicalBrackets": {
+            "type": "string",
+            "default": "1px solid #fc09; outline-offset: 2px"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "fix-brackets.completeBracket",
+        "title": "Fix Brackets: Complete Brackets",
+        "enablement": "fixBrackets.canCompleteBracket"
+      },
+      {
+        "command": "fix-brackets.toggleMagicalBracketMode",
+        "title": "Fix Brackets: Toggle Magical Bracket Mode",
+        "enablement": "fixBrackets.canToggleMagicalBracketMode"
+      },
+      {
+        "command": "fix-brackets.move-left",
+        "title": "Fix Brackets: Move Left",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      },
+      {
+        "command": "fix-brackets.move-right",
+        "title": "Fix Brackets: Move Right",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      },
+      {
+        "command": "fix-brackets.move-up",
+        "title": "Fix Brackets: Move Up",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      },
+      {
+        "command": "fix-brackets.move-down",
+        "title": "Fix Brackets: Move Down",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      },
+      {
+        "command": "fix-brackets.exitMagicalBracketMode",
+        "title": "Fix Brackets: Exit Magical Bracket Mode",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "fix-brackets.toggleMagicalBracketMode",
+        "when": "editorTextFocus && fixBrackets.canToggleMagicalBracketMode",
+        "key": "ctrl+g",
+        "mac": "cmd+g"
+      },
+      {
+        "command": "fix-brackets.move-left",
+        "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+        "key": "ctrl+left",
+        "mac": "cmd+left"
+      },
+      {
+        "command": "fix-brackets.move-right",
+        "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+        "key": "ctrl+right",
+        "mac": "cmd+right"
+      },
+      {
+        "command": "fix-brackets.move-up",
+        "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+        "key": "ctrl+up",
+        "mac": "cmd+up"
+      },
+      {
+        "command": "fix-brackets.move-down",
+        "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+        "key": "ctrl+down",
+        "mac": "cmd+down"
+      },
+      {
+        "command": "fix-brackets.exitMagicalBracketMode",
+        "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
+        "key": "escape"
+      },
+      {
+        "command": "fix-brackets.completeBracket",
+        "when": "editorTextFocus && fixBrackets.canCompleteBracket && !inlineSuggestionVisible && !editorReadonly",
+        "key": "ctrl+right",
+        "mac": "cmd+right"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./ && webpack --mode production",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test:vscode": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "mocha": "10",
+    "s-js": "^0.4.9",
+    "tslib": "^2.6.2",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {}
+}
