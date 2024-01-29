@@ -83,17 +83,12 @@
           },
           "fix-brackets.pauseMiddleChars": {
             "type": "string",
-            "default": ",=+-*/!?",
+            "default": ";,=+-*/!?",
             "description": "The characters that ) stop at its left, ( stop at its right"
           },
           "fix-brackets.pauseAfterChars": {
             "type": "string",
             "default": ">"
-          },
-          "fix-brackets.boundaryChars": {
-            "type": "string",
-            "default": ";",
-            "description": "When moving a magical bracket, it can't go across these characters"
           },
           "fix-brackets.autoMagicalBracketMode": {
             "type": "string",
@@ -201,9 +196,12 @@
     "compile": "tsc -p ./",
     "bundle": "rm -rf out && webpack --mode production",
     "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "pretest:vscode": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test:vscode": "vscode-test"
+    "test:vscode": "vscode-test",
+    "unit": "cd out && mocha --exclude test/extension.test.js",
+    "unit:watch": "npm run unit -- --watch",
+    "tdd": "run-p watch unit:watch"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
@@ -214,14 +212,16 @@
     "@vscode/test-cli": "^0.0.4",
     "@vscode/test-electron": "^2.3.8",
     "eslint": "^8.56.0",
+    "kleur": "^4.1.5",
+    "magic-string": "^0.30.5",
     "mocha": "10",
+    "npm-run-all": "^4.1.5",
     "s-js": "^0.4.9",
-    "tslib": "^2.6.2",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {}
+  }
 }
