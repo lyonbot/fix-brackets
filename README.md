@@ -53,3 +53,11 @@ Initial release of fix-brackets
 
   - **at end of line**, use `Cmd+Right` to complete brackets
   - different behavior on empty / non-empty lines
+
+### 0.2.2
+
+Improve algorithm about bracket matching
+
+- Support grouping `<tag />`
+- Support fuzzing match for malformed bracket pairs
+- Improve behaviors on line breaks.
