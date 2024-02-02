@@ -15,14 +15,14 @@
 - **💫 Magical Brackets 💫**
 
   - typing `]` `)` `}` and auto activate this mode - can be disabled in settings
-  - **move** them with `Cmd+↓` `Cmd+↑` or `Cmd+←` `Cmd+→`
+  - **move** them with `Cmd+▲` `Cmd+▼` or `Cmd+◀` `Cmd+▶`
   - _tips:_ use `Cmd+G` to switch any open / closing bracket into magical mode
 
   ![](./images/magical-bracket.gif)
 
 - **🔥 Complete Brackets 🔥**
 
-  - **at end of line**, use `Cmd+Right` to complete brackets
+  - **at end of line**, use `Cmd+▶` to complete brackets
   - works on new lines too
 
   ![](./images/complete-bracket.gif)
@@ -51,7 +51,7 @@ Initial release of fix-brackets
 
 - **🔥 Complete Brackets 🔥**
 
-  - **at end of line**, use `Cmd+Right` to complete brackets
+  - **at end of line**, use `Cmd+▶` to complete brackets
   - different behavior on empty / non-empty lines
 
 ### 0.2.2
@@ -61,3 +61,12 @@ Improve algorithm about bracket matching
 - Support grouping `<tag />`
 - Support fuzzing match for malformed bracket pairs
 - Improve behaviors on line breaks.
+
+### 0.2.3
+
+Extended scan range, including brackets in comments and string literals
+
+- Move brackets in string and comment
+- Complete block comments' `*/` with `Cmd+▶`
+- Complete brackets in string
+- Use `Alt+◀` and `Alt+▶` to move by one character. (in case things goes weird)

@@ -12,7 +12,7 @@
     "refactoring",
     "completion"
   ],
-  "version": "0.2.2",
+  "version": "0.2.3",
   "icon": "./images/icon.png",
   "engines": {
     "vscode": "^1.60.0"
@@ -141,6 +141,16 @@
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
+        "command": "fix-brackets.move-left-by-character",
+        "title": "Fix Brackets: Move Left (by character)",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      },
+      {
+        "command": "fix-brackets.move-right-by-character",
+        "title": "Fix Brackets: Move Right (by character)",
+        "enablement": "fixBrackets.hasMagicalBrackets"
+      },
+      {
         "command": "fix-brackets.exitMagicalBracketMode",
         "title": "Fix Brackets: Exit Magical Bracket Mode",
         "enablement": "fixBrackets.hasMagicalBrackets"
@@ -178,12 +188,12 @@
         "mac": "cmd+down"
       },
       {
-        "command": "fix-brackets.move-left",
+        "command": "fix-brackets.move-left-by-character",
         "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
         "key": "alt+left"
       },
       {
-        "command": "fix-brackets.move-right",
+        "command": "fix-brackets.move-right-by-character",
         "when": "editorTextFocus && fixBrackets.hasMagicalBrackets",
         "key": "alt+right"
       },
