@@ -1,4 +1,4 @@
-# Fix Brackets
+# F Brackets
 
 <div align="center">
 
@@ -9,6 +9,8 @@
 [💾 Install on VSCode](https://marketplace.visualstudio.com/items?itemName=lyonbot.fix-brackets) - [💬 Feedback](https://github.com/lyonbot/fix-brackets/issues)
 
 </div>
+
+*Disclaimer: the `F` stands for fix, fight, flexible, and others... except that F-word.*
 
 ## Features
 

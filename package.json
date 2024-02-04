@@ -1,6 +1,6 @@
 {
   "name": "fix-brackets",
-  "displayName": "Fix Brackets: Edit and Complete",
+  "displayName": "F Brackets: Move and Complete brackets",
   "description": "Effectively edit, move, complete brackets with keyboard",
   "publisher": "lyonbot",
   "preview": true,
@@ -74,7 +74,7 @@
     },
     "configuration": [
       {
-        "title": "Fix Brackets",
+        "title": "F Brackets",
         "properties": {
           "fix-brackets.pauseBeforeChars": {
             "type": "string",
@@ -112,47 +112,47 @@
     "commands": [
       {
         "command": "fix-brackets.completeBracket",
-        "title": "Fix Brackets: Complete Brackets",
+        "title": "F Brackets: Complete Brackets",
         "enablement": "fixBrackets.canCompleteBracket"
       },
       {
         "command": "fix-brackets.toggleMagicalBracketMode",
-        "title": "Fix Brackets: Toggle Magical Bracket Mode",
+        "title": "F Brackets: Toggle Magical Bracket Mode",
         "enablement": "fixBrackets.canToggleMagicalBracketMode"
       },
       {
         "command": "fix-brackets.move-left",
-        "title": "Fix Brackets: Move Left",
+        "title": "F Brackets: Move Left",
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
         "command": "fix-brackets.move-right",
-        "title": "Fix Brackets: Move Right",
+        "title": "F Brackets: Move Right",
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
         "command": "fix-brackets.move-up",
-        "title": "Fix Brackets: Move Up",
+        "title": "F Brackets: Move Up",
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
         "command": "fix-brackets.move-down",
-        "title": "Fix Brackets: Move Down",
+        "title": "F Brackets: Move Down",
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
         "command": "fix-brackets.move-left-by-character",
-        "title": "Fix Brackets: Move Left (by character)",
+        "title": "F Brackets: Move Left (by character)",
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
         "command": "fix-brackets.move-right-by-character",
-        "title": "Fix Brackets: Move Right (by character)",
+        "title": "F Brackets: Move Right (by character)",
         "enablement": "fixBrackets.hasMagicalBrackets"
       },
       {
         "command": "fix-brackets.exitMagicalBracketMode",
-        "title": "Fix Brackets: Exit Magical Bracket Mode",
+        "title": "F Brackets: Exit Magical Bracket Mode",
         "enablement": "fixBrackets.hasMagicalBrackets"
       }
     ],
