@@ -12,7 +12,7 @@
     "refactoring",
     "completion"
   ],
-  "version": "0.2.3",
+  "version": "0.2.4",
   "icon": "./images/icon.png",
   "engines": {
     "vscode": "^1.60.0"

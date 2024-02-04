@@ -17,8 +17,12 @@
 - **💫 Magical Brackets 💫**
 
   - typing `]` `)` `}` and auto activate this mode - can be disabled in settings
-  - **move** them with `Cmd+▲` `Cmd+▼` or `Cmd+◀` `Cmd+▶`
-  - _tips:_ use `Cmd+G` to switch any open / closing bracket into magical mode
+  - **quickly move** brackets with:
+    - `Cmd+▲` `Cmd+▼` move by line
+    - `Cmd+◀` `Cmd+▶` by token
+    - `Alt+◀` `Alt+▶` by character (in case brackets sneak too fast)
+  - _tips:_
+    - use `Cmd+G` to toggle "magical mode" on any brackets
 
   ![](./images/magical-bracket.gif)
 
