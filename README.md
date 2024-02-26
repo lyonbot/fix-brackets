@@ -10,7 +10,7 @@
 
 </div>
 
-*Disclaimer: the `F` stands for fix, fight, flexible, and others... except that F-word.*
+_Disclaimer: the `F` stands for fix, fight, flexible, and others... except that F-word._
 
 ## Features
 
@@ -20,7 +20,7 @@
   - **quickly move** brackets with:
     - `Cmd+▲` `Cmd+▼` move by line
     - `Cmd+◀` `Cmd+▶` by token
-    - `Alt+◀` `Alt+▶` by character (in case brackets sneak too fast)
+    - `Cmd+Alt+◀` `Cmd+Alt+▶` by character (in case brackets sneak too fast)
   - _tips:_
     - use `Cmd+G` to toggle "magical mode" on any brackets
 
@@ -76,3 +76,9 @@ Extended scan range, including brackets in comments and string literals
 - Complete block comments' `*/` with `Cmd+▶`
 - Complete brackets in string
 - Use `Alt+◀` and `Alt+▶` to move by one character. (in case things goes weird)
+
+### 0.2.4
+
+Improve default settings
+
+- Use `Cmd+Alt+◀` and `Cmd+Alt+▶` to move by character, cause I find `Alt+▶` is more meaningful for moving caret.
