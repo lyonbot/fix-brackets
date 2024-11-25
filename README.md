@@ -77,7 +77,7 @@ Extended scan range, including brackets in comments and string literals
 - Complete brackets in string
 - Use `Alt+◀` and `Alt+▶` to move by one character. (in case things goes weird)
 
-### 0.2.4
+### 0.2.5
 
 Improve default settings
 
