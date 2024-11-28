@@ -4,27 +4,31 @@
 
 <img src="./images/icon.png" width="96" height="96">
 
-⚔️ The VS Code extension that helps you fight against brackets!
+⚔️ Fight against Brackets. Fly brackets.
 
 [💾 Install on VSCode](https://marketplace.visualstudio.com/items?itemName=lyonbot.fix-brackets) - [💬 Feedback](https://github.com/lyonbot/fix-brackets/issues)
 
 </div>
 
-_Disclaimer: the `F` stands for fix, fight, flexible, and others... except that F-word._
-
 ## Features
 
-- **💫 Magical Brackets 💫**
+- **💫 Magical Brackets: move on the fly 💫**
 
-  - typing `]` `)` `}` and auto activate this mode - can be disabled in settings
-  - **quickly move** brackets with:
-    - `Cmd+▲` `Cmd+▼` move by line
-    - `Cmd+◀` `Cmd+▶` by token
-    - `Cmd+Alt+◀` `Cmd+Alt+▶` by character (in case brackets sneak too fast)
-  - _tips:_
-    - use `Cmd+G` to toggle "magical mode" on any brackets
+  When a glowing box wraps a bracket, you can **quickly move** brackets with:
+
+  - `Cmd+▲` `Cmd+▼` move by line
+  - `Cmd+◀` `Cmd+▶` by token
+  - `Cmd+Alt+◀` `Cmd+Alt+▶` by character
+
+  Brackets are wrapped while typing, or use `Cmd+G` to toggle magical mode.
 
   ![](./images/magical-bracket.gif)
+
+- **💥 Split Lines / HTML Attrs 💥**
+
+  Put caret on the bracket (or HTML tag name), then toggle line breaks with `💡code actions` ( shortcut: `Cmd+.` then press `B` to quickly find it )
+
+  ![](./images/split-lines.gif)
 
 - **🔥 Complete Brackets 🔥**
 
@@ -82,3 +86,11 @@ Extended scan range, including brackets in comments and string literals
 Improve default settings
 
 - Use `Cmd+Alt+◀` and `Cmd+Alt+▶` to move by character, cause I find `Alt+▶` is more meaningful for moving caret.
+
+### 0.2.6
+
+Feature: split lines 🚀 put caret on a bracket or its nearby spaces, then use `Cmd+.` to split / join lines of its content.
+
+### 0.2.7
+
+Feature: split HTML attributes 🚀 put caret on a HTML tag name, then use `Cmd+.` to split / join attributes to lines.

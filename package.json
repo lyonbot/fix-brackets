@@ -12,7 +12,7 @@
     "refactoring",
     "completion"
   ],
-  "version": "0.2.6",
+  "version": "0.2.7",
   "icon": "./images/icon.png",
   "engines": {
     "vscode": "^1.60.0"
@@ -29,10 +29,6 @@
     "type": "git",
     "url": "https://github.com/lyonbot/fix-brackets"
   },
-  "files": [
-    "./out/extension.js",
-    "./images/icon.png"
-  ],
   "activationEvents": [
     "onStartupFinished"
   ],
